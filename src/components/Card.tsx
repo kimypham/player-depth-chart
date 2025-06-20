@@ -1,14 +1,11 @@
-export const Card = ({
-    title,
-    children,
-}: {
+interface CardProps {
     title: string;
     children?: React.ReactNode;
-}) => {
-    return (
-        <div className="bg-white rounded-lg shadow-lg p-3 my-3">
-            <h2 className="mb-3">{title}</h2>
-            {children}
-        </div>
-    );
-};
+}
+
+export const Card = ({ title, children }: CardProps) => (
+    <div className="bg-white rounded-lg shadow-lg p-3 mb-3 grid gap-3">
+        <h2>{title}</h2>
+        {children}
+    </div>
+);
